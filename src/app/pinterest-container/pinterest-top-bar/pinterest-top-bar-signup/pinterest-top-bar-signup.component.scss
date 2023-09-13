@@ -1,4 +1,3 @@
-// Pinterest-inspired styles
 .container {
     text-align: center;
     margin: 50px auto;
@@ -6,21 +5,17 @@
     padding: 20px;
   
     h2 {
-      font-size: 28px;
-      color: #e60023;
-      margin-bottom: 10px;
+      font-size: 24px;
     }
   
     h3 {
+      color: #e60023;
       font-size: 18px;
-      color: #333;
       margin: 10px 0;
     }
   
     p {
       font-size: 16px;
-      color: #555;
-      margin-bottom: 20px;
     }
   
     form {
@@ -33,11 +28,10 @@
         label {
           display: block;
           font-size: 16px;
-          font-weight: bold;
-          color: #333;
           margin-bottom: 5px;
         }
   
+        input[type="email"],
         input[type="text"],
         input[type="password"] {
           width: 100%;
@@ -69,6 +63,13 @@
           background-color: #cc001f;
         }
       }
+    }
+  }
+
+  // Media query for responsive design
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
     }
   }
   
