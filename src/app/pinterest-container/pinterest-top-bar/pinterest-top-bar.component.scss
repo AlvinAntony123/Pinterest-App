@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #49ab7f; 
+    padding: 20px 20px;
+    font-size: 20px;                  
+}
+
+.navbar
+{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
