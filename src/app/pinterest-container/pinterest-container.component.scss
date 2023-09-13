@@ -1,0 +1,23 @@
+// Define the number of columns and the gap between tiles
+$column-count: 4;
+$gap: 16px;
+
+.main-page {
+  display: grid;
+  grid-template-columns: repeat(#{$column-count}, 1fr);
+  gap: $gap;
+  justify-content: center; // Center horizontally
+  
+  .main-page__pinterest-tile {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Center vertically and horizontally
+    align-items: center;
+    text-align: center; // Center-align text horizontally
+    // Add any additional styling you want for the Pinterest tiles
+    
+    // Optional: Add padding to create some space around the label
+    padding: 10px;
+  }
+}

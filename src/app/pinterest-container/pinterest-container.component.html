@@ -1,1 +1,16 @@
 <app-pinterest-top-bar></app-pinterest-top-bar>
+<div class="main-page">
+    <ng-container *ngFor="let tile of tileList">
+        <div class="main-page__pinterest-tile">
+            <div class="main-page__pinterest-tile__image">
+                <img src={{tile.imgUrl}} alt="image">
+            </div>
+            <div class="main-page__pinterest-tile__title">
+                {{tile.label}}
+            </div>
+            <div class="main-page__pinterest-tile__favourite">
+                {{tile.isFavourite}}
+            </div>
+        </div>
+    </ng-container>
+</div>
