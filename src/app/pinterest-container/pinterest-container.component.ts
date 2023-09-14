@@ -11,8 +11,9 @@ export class PinterestContainerComponent implements OnInit
   public tileList: Array<ITile> = [];
   isFilled: boolean = false;
 
-  toggleHeart() {
-    this.isFilled = !this.isFilled;
+  toggleHeart(tile: ITile) {
+    tile.isFavourite = !tile.isFavourite;
+    console.log(this.tileList);
   }
 
   public ngOnInit(): void {

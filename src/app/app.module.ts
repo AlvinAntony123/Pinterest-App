@@ -7,6 +7,7 @@ import { PinterestContainerModule } from './pinterest-container/pinterest-contai
 import { PinterestTopBarComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar.component';
 import { PinterestTopBarSigninComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signin/pinterest-top-bar-signin.component';
 import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-
     BrowserModule,
     AppRoutingModule,
     PinterestContainerModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
