@@ -5,12 +5,11 @@
             <div class="main-page__pinterest-tile__image">
                 <img src={{tile.imgUrl}} alt="image">
             </div>
-            <div class="main-page__pinterest-tile__title">
+            <h3 class="main-page__pinterest-tile__title">
                 {{tile.label}}
-            </div>
-            <div class="main-page__pinterest-tile__favourite">
-                {{tile.isFavourite}}
-            </div>
+                <span class="fa" [ngClass]="{'fas fa-heart': isFilled, 'far fa-heart-o': !isFilled}" (click)="toggleHeart()"></span>
+            </h3>
         </div>
     </ng-container>
 </div>
+

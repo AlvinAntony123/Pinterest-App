@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
     padding: 10px 20px;
 }
 
@@ -31,6 +32,10 @@ body {
     margin-left: 0;
 }
 
+.pinterest-nav ul li:last-child {
+    margin-right: 0;
+}
+
 .pinterest-nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -44,33 +49,43 @@ body {
     color: #000; /* Change text color to black on hover */
 }
 
+/* Center the search bar horizontally and vertically */
 .search-bar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
 }
 
+/* Style for the search input */
 .search-bar input[type="text"] {
     flex-grow: 1;
-    padding: 7px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 25px;
-    width: 300px;
+    width: 600px;
+    margin-right: 10px; /* Add spacing between input and button */
+    font-size: 16px; /* Adjust font size */
 }
 
+/* Style for the search button */
 .search-bar button[type="submit"] {
     background-color: #e60023;
     color: #fff;
     border: none;
-    border-radius: 15px;
-    padding: 7px;
-    margin-left: 20px;
-    font-size: 16px;
-    width: 100px;
+    border-radius: 25px; /* Adjust border-radius to match input */
+    padding: 10px 20px; /* Adjust padding to make the button larger */
+    font-size: 16px; /* Adjust font size */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .search-bar button[type="submit"]:hover {
     background-color: #000;
+}
+
+
+/* Hide the "Sign In" and "Sign Up" elements */
+app-pinterest-top-bar-signin,
+app-pinterest-top-bar-signup {
+    display: none;
 }

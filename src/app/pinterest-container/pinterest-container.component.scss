@@ -1,5 +1,7 @@
+@import "~font-awesome/css/font-awesome.css";
+
 $column-count: 4;
-$gap: px;
+$gap: 20px;
 
 .main-page 
 {
@@ -13,6 +15,7 @@ $gap: px;
     display: flex;
     flex-direction: column;
     padding: 10px;
+    margin-left: $gap;
 
     &__image {
       img {
@@ -27,6 +30,17 @@ $gap: px;
         margin-top: 10px;
         font-weight: bold; // Add space between the image and the tile name
       }
-
   }
 }
+
+/* Style for the filled heart (liked) */
+.fas.fa-heart {
+   flex-grow: 1;
+    color: red; /* Set the color to red */
+  }
+  
+  /* Style for the empty heart (not liked) */
+  .far.fa-heart-o {
+    color: black; /* Set the color to black */
+  }
+  
