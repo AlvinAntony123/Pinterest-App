@@ -18,4 +18,12 @@ export class PinterestTopBarComponent {
   public GotoSignUp(){
     this.router.navigate(['signup']);
   }
+
+  public GotoCreate(){
+    this.router.navigate(['create']);
+  }
+
+  public GotoHome(){
+    this.router.navigate(['home']);
+  }
 }

@@ -8,10 +8,13 @@ import { PinterestTopBarComponent } from './pinterest-container/pinterest-top-ba
 import { PinterestTopBarSigninComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signin/pinterest-top-bar-signin.component';
 import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
 import { RouterModule } from '@angular/router';
+import { LocalStorageService } from './services/local-storage.service';
+import { AddTileService } from './services/add-tile.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,11 @@ import { RouterModule } from '@angular/router';
     PinterestContainerModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageService,
+    AddTileService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

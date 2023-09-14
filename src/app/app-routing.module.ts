@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { PinterestContainerComponent } from './pinterest-container/pinterest-container.component';
 import { PinterestTopBarSigninComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signin/pinterest-top-bar-signin.component';
 import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
+import { CreateTileComponent } from './pinterest-container/create-tile/create-tile.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: PinterestTopBarSignupComponent
+  },
+  {
+    path: 'create',
+    component: CreateTileComponent
   }
 ];
 

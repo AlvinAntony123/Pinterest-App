@@ -1,4 +1,4 @@
-.signup {
+.create-tile {
     text-align: center;
     margin: 50px auto;
     max-width: 400px;
@@ -31,10 +31,8 @@
           margin-bottom: 5px;
           font-weight: bold;
         }
-  
-        input[type="email"],
-        input[type="text"],
-        input[type="password"] {
+
+        input[type="text"] {
           width: 100%;
           padding: 10px;
           font-size: 16px;

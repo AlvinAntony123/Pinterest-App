@@ -6,6 +6,7 @@ import { PinterestTopBarSigninComponent } from './pinterest-top-bar/pinterest-to
 import { PinterestTopBarSignupComponent } from './pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CreateTileComponent } from './create-tile/create-tile.component';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     PinterestTopBarComponent,
     PinterestTopBarSigninComponent,
     PinterestTopBarSignupComponent,
+    CreateTileComponent
   ],
   imports: [
     CommonModule,

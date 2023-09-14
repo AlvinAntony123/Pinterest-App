@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITile } from 'app/pinterest-container/pinterest-container.interface';
 import { IUserDetails } from './pinterest-top-bar-signup.interface';
+import { UserService } from 'app/services/user.service';
 
 @Component({
   selector: 'app-pinterest-top-bar-signup',
@@ -11,7 +12,10 @@ import { IUserDetails } from './pinterest-top-bar-signup.interface';
 export class PinterestTopBarSignupComponent implements OnInit{
 public form! : IUserDetails;
 
-constructor(public readonly router : Router){}
+constructor(
+  public readonly router : Router,
+  public readonly userService: UserService
+  ){}
 
 public error: boolean=false;
 
@@ -28,6 +32,7 @@ public onSubmit(){
   if(this.form.password === this.form.confirmpassword){
     {
       this.error = false;
+      this.userService.AddUser(this.form);
       void this.router.navigate(['login']);
     }
   }
