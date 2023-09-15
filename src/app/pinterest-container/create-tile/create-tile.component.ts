@@ -38,4 +38,5 @@ export class CreateTileComponent implements OnInit {
         isFavourite: false
       }
     }
+
 }
