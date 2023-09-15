@@ -26,4 +26,8 @@ export class PinterestTopBarComponent {
   public GotoHome(){
     this.router.navigate(['home']);
   }
+
+  public GotoFavorite(){
+    this.router.navigate(['favorite']);
+  }
 }
