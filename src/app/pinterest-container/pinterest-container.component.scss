@@ -19,16 +19,16 @@ $gap: 20px;
 
     &__image {
       img {
-        border-radius: 15px; // Apply border-radius to the img tag
-        max-width: 100%; // Ensure the image fits within its container
-        height: auto; // Maintain aspect ratio
+        border-radius: 15px; 
+        max-width: 100%; 
+        height: auto; 
       }
     }
 
     &__title {
-        text-align: left; // Align the tile name to the left
+        text-align: left; 
         margin-top: 10px;
-        font-weight: bold; // Add space between the image and the tile name
+        font-weight: bold; 
       }
   }
 }
@@ -36,11 +36,11 @@ $gap: 20px;
 /* Style for the filled heart (liked) */
 .fas.fa-heart {
    flex-grow: 1;
-    color: red; /* Set the color to red */
+    color: red; 
   }
   
   /* Style for the empty heart (not liked) */
   .far.fa-heart-o {
-    color: black; /* Set the color to black */
+    color: black; 
   }
   

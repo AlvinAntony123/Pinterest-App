@@ -1,5 +1,27 @@
 <body>
     <nav class="pinterest-nav">
+        <img src="https://thumbs.dreamstime.com/z/rounded-black-white-pinterest-icon-rounded-black-white-pinterest-icon-web-printing-purpose-rounded-black-outlined-176111589.jpg?w=768" alt="Pinterest Icon" class="pinterest-nav__icon" style="width: 50px; height: 50px;">
+        <ul class="pinterest-nav__menu">
+            <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoHome()">Home</a></li>
+            <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoHome()">Following</a></li>
+            <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoCreate()">Create</a></li>
+            <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoHome()">Saved</a></li>
+        </ul>
+        <div class="pinterest-nav__search-bar">
+            <input type="text" placeholder="Search..." class="pinterest-nav__search-input">
+            <button type="submit" class="pinterest-nav__search-button">Search</button>
+        </div>
+        <ul class="pinterest-nav__user-menu">
+            <li class="pinterest-nav__user-menu-item"><a class="pinterest-nav__user-link" style="cursor: pointer;" (click)="GotoLogin()">Sign-In</a></li>
+            <li class="pinterest-nav__user-menu-item"><a class="pinterest-nav__user-link" style="cursor: pointer;" (click)="GotoSignUp()">Sign-Up</a></li>
+        </ul>
+    </nav>
+</body>
+
+
+<!-- <body>
+    <nav class="pinterest-nav">
+        <img src="https://thumbs.dreamstime.com/z/rounded-black-white-pinterest-icon-rounded-black-white-pinterest-icon-web-printing-purpose-rounded-black-outlined-176111589.jpg?w=768" alt="Pinterest Icon" style="width: 50px; height: 50px;">
         <ul>
             <li><a style="cursor: pointer;" (click)="GotoHome()">Home</a></li>
             <li><a style="cursor: pointer;" (click)="GotoHome()">Following</a></li>
@@ -11,8 +33,8 @@
             <button type="submit">Search</button>
         </div>
         <ul>
-            <li><a style="cursor: pointer;" (click)="GotoLogin()">Login</a></li>
-            <li><a style="cursor: pointer;" (click)="GotoSignUp()">Signup</a></li>
+            <li><a style="cursor: pointer;" (click)="GotoLogin()">Sign-In</a></li>
+            <li><a style="cursor: pointer;" (click)="GotoSignUp()">Sign-Up</a></li>
         </ul>
     </nav>
-</body>
+</body> -->

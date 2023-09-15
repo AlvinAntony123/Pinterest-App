@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ITile } from 'app/pinterest-container/pinterest-container.interface';
 import { IUserDetails } from './pinterest-top-bar-signup.interface';
 import { UserService } from 'app/services/user.service';
 

@@ -29,8 +29,11 @@ export class PinterestTopBarSigninComponent implements OnInit {
   public SignIn(){
     console.log(this.userContext.ValidateUser(this.user));
     if(this.userContext.ValidateUser(this.user))
+    {
       this.router.navigate(['home']);
-    else this.error = true;
+    }
+    else 
+      this.error = true;
   }
 
   public SignUp(){
