@@ -1,29 +1,42 @@
 <app-pinterest-top-bar></app-pinterest-top-bar>
-<div class="signup">
+<div class="signup-container">
     <h2 class="signup-h2">SIGN UP</h2>
     <h3 class="signup-h3">Welcome to Pinterest</h3>
-    <p class="signup-p" *ngIf="error == true">Passwords does not match</p>
-    <div class="signup__form">
-        <div class="form-group">
-            <label class="signup__form-label" for="signup-email">Email:</label>
-            <input type="email" id="signup-email" name="signup-email" required [(ngModel)]="form.email" />
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()"> 
+        <div class="error" *ngIf="!signUpForm.valid && signUpForm.touched">All fields are required</div>
+        <div>
+          <label class="signup-container__form-label">Enter Name: </label>
+          <input type="text" name="username" formControlName="username"/>
+          <div class="validation-error" *ngIf="name.hasError('required') && name.touched">Name is required</div>
         </div>
-        <div class="form-group">
-            <label for="signup__form-label">Username:</label>
-            <input type="text" id="signup-username" name="signup-username" required [(ngModel)]="form.username">
+        <div>
+          <label class="signup-container__form-label">Enter email: </label>
+          <input type="email" name="email" formControlName="email"/>
+          <div class="validation-error" *ngIf="signUpForm.controls['email'].hasError('required') &&
+            signUpForm.controls['email'].touched">Email is required</div>
+          <div class="validation-error" *ngIf="signUpForm.controls['email'].hasError('invalidEmail')">Email is not valid</div>
         </div>
-        <div class="form-group">
-            <label for="signup__form-label">Password:</label>
-            <input type="text" id="signup-password" name="signup-password" required [(ngModel)]="form.password">
+        <div>
+          <label class="signup-container__form-label">Enter password: </label>
+          <input type="password" name="password" formControlName="password"/>
+          <div class="validation-error" *ngIf="signUpForm.controls['password'].hasError('required') &&
+            signUpForm.controls['password'].touched">Password is required</div>
         </div>
-        <div class="form-group">
-            <label class="signup__form-label">Confirm Password:</label>
-            <input type="password" id="signup-confirmPassword" name="signup-confirmPassword" required
-                [(ngModel)]="form.confirmpassword" />
+        <div>
+          <label class="signup-container__form-label">Confirm Password: </label>
+          <input type="password" name="confirmpassword" formControlName="confirmpassword"/>
+          <div class="validation-error" *ngIf="signUpForm.controls['confirmpassword'].hasError('required') &&
+            signUpForm.controls['confirmpassword'].touched">Confirm Password is required</div>
+          <div class="validation-error" *ngIf="signUpForm.hasError('passwordNotMatched') &&
+            signUpForm.controls['confirmpassword'].touched">Passwords do not match</div>
         </div>
-        <div class="signup__form__buttons">
-            <button class="signup__buttons-submit" type="submit" (click)="onSubmit()">Sign Up</button>
-            <button class="signup__buttons-reset" (click)="onReset()">Reset</button>
+        <div>
+          <label class="signup-container__form-label">I agree to terms and Conditions</label>
+          <input type="checkbox" formControlName="termsAgreement"/>
         </div>
-    </div>
-    <div>
+        <div class="signup-container__buttons">
+          <button type="submit" class="signup-container__buttons-signup" [disabled]="!isTermsAgreed()">Submit</button>
+          <button type="reset" class="signup-container__buttons-reset" (click)="onReset()">Reset</button>
+        </div>
+      </form>      
+<div>

@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { LocalStorageService } from './services/local-storage.service';
 import { AddTileService } from './services/add-tile.service';
 import { UserService } from './services/user.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PinterestContainerComponent } from './pinterest-container/pinterest-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { UserService } from './services/user.service';
     BrowserModule,
     AppRoutingModule,
     PinterestContainerModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     LocalStorageService,
