@@ -5,7 +5,7 @@
             <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoHome()">Home</a></li>
             <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoHome()">Following</a></li>
             <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoCreate()">Create</a></li>
-            <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoHome()">Saved</a></li>
+            <li class="pinterest-nav__menu-item"><a class="pinterest-nav__link" style="cursor: pointer;" (click)="GotoFavorite()">Favorite</a></li>
         </ul>
         <div class="pinterest-nav__search-bar">
             <input type="text" placeholder="Search..." class="pinterest-nav__search-input">
@@ -14,6 +14,7 @@
         <ul class="pinterest-nav__user-menu">
             <li class="pinterest-nav__user-menu-item"><a class="pinterest-nav__user-link" style="cursor: pointer;" (click)="GotoLogin()">Sign-In</a></li>
             <li class="pinterest-nav__user-menu-item"><a class="pinterest-nav__user-link" style="cursor: pointer;" (click)="GotoSignUp()">Sign-Up</a></li>
+            
         </ul>
     </nav>
 </body>
@@ -26,7 +27,7 @@
             <li><a style="cursor: pointer;" (click)="GotoHome()">Home</a></li>
             <li><a style="cursor: pointer;" (click)="GotoHome()">Following</a></li>
             <li><a style="cursor: pointer;" (click)="GotoCreate()">Create</a></li>
-            <li><a style="cursor: pointer;" (click)="GotoHome()">Saved</a></li>
+            <li><a style="cursor: pointer;" (click)="GotoFavorite()">Favorites</a></li>
         </ul>
         <div class="search-bar">
             <input type="text" placeholder="Search...">
