@@ -4,7 +4,6 @@ import { PinterestContainerComponent } from './pinterest-container/pinterest-con
 import { PinterestTopBarSigninComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signin/pinterest-top-bar-signin.component';
 import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
 import { CreateTileComponent } from './pinterest-container/create-tile/create-tile.component';
-import { FavoritesComponent } from './pinterest-container/favorites/favorites.component';
 
 const routes: Routes = [
   {
@@ -27,10 +26,6 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateTileComponent
-  },
-  {
-    path: 'favorite',
-    component: FavoritesComponent
   }
 ];
 
