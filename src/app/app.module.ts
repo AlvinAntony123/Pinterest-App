@@ -16,6 +16,16 @@ import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-
     BrowserModule,
     AppRoutingModule,
     PinterestContainerModule,
+<<<<<<< Updated upstream
+=======
+    RouterModule,
+    
+  ],
+  providers: [
+    LocalStorageService,
+    AddTileService,
+    UserService
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]

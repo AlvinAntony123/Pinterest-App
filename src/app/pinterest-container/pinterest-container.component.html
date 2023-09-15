@@ -1,10 +1,29 @@
 <app-pinterest-top-bar></app-pinterest-top-bar>
+<<<<<<< Updated upstream
+=======
+<h1>Feed</h1>
+<div class="main-page">
+        <ng-container *ngFor="let tile of tileList">
+            <div class="main-page__pinterest-tile">
+                <div class="main-page__pinterest-tile__image">
+                    <img src={{tile.imgUrl}} alt="image">
+                </div>
+                <h3 class="main-page__pinterest-tile__title">
+                    {{tile.label}}
+                    <span class="fa" [ngClass]="{'fas fa-heart': tile.isFavourite, 'far fa-heart-o': !tile.isFavourite}" (click)="toggleHeart(tile)"></span>
+                </h3>
+            </div>
+        </ng-container>
+</div>
+<!-- <h1>Favourites</h1>
+>>>>>>> Stashed changes
 <div class="main-page">
     <ng-container *ngFor="let tile of tileList">
         <div class="main-page__pinterest-tile">
             <div class="main-page__pinterest-tile__image">
                 <img src={{tile.imgUrl}} alt="image">
             </div>
+<<<<<<< Updated upstream
             <div class="main-page__pinterest-tile__title">
                 {{tile.label}}
             </div>
@@ -14,3 +33,7 @@
         </div>
     </ng-container>
 </div>
+=======
+        </ng-container>
+</div> -->
+>>>>>>> Stashed changes

@@ -1,0 +1,25 @@
+<app-pinterest-top-bar></app-pinterest-top-bar>
+<div class="create-tile">
+    <h2 class="create-tile-h2">CREATE TILE</h2>
+    <h3 class="create-tile-h3">Add the tile details</h3>
+    <form [formGroup]="createTileForm" (ngSubmit)="CreateTile()">
+    <div class="error" *ngIf="!createTileForm.valid">All the fields are required</div>
+    <div class="create-tile__form">
+       
+            <div class="form-group">
+                <label class="create-tile__form-label" for="tile-title">Title:</label>
+                <input type="text" id="tile-title" name="tile-title" formControlName="label" />
+                <div class="validation-error" *ngIf="createTileForm.valid && createTileForm.controls['label'].touched">Title is required</div>
+            </div>
+            <div class="form-group">
+                <label class="create-tile__form-label" for="tile-img">Image URL:</label>
+                <input type="text" id="tile-img" name="tile-img" formControlName = "imgUrl">
+                <div class="validation-error" *ngIf="createTileForm.valid && createTileForm.controls['imgUrl'].touched">Url is required</div>
+            </div>
+            <div class="create-tile__buttons">
+                <button type="submit" class="create-tile__buttons-submit" type="submit"(click)="CreateTile()">Create</button>
+                <button type="button" class="create-tile__buttons-reset" (click)="ResetTile()">Reset</button>
+            </div>
+            </div>
+        </form>
+    </div>

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="container">
     <h2>LOG-IN</h2>
     <h3>Welcome to Pinterest</h3>
@@ -24,3 +25,42 @@
     </form>
 </div>
 
+=======
+<app-pinterest-top-bar></app-pinterest-top-bar>
+<div class="signup">
+    <h2 class="signup-h2">SIGN UP</h2>
+    <h3 class="signup-h3">Welcome to Pinterest</h3>
+    <p class="signup-p" *ngIf="error == true">Passwords does not match</p>
+    <div class="signup__form">
+        <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label class="signup__form-label" for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="signup-email" required formControlName="email" />
+            <!-- <div class="validation-error" *ngIf="SignupForm.controls['email'].hasError('required') && SignupForm.controls['email'].touched">Enter Email</div> -->
+            <div class="validation-error" *ngIf="SignupForm.controls['email'].hasError('invalidEmail') && SignupForm.controls['email'].touched">Invalid Email</div>
+        </div>
+        <div class="form-group">
+            <label for="signup__form-label">Username:</label>
+            <input type="text" id="signup-username" name="signup-username" required formControlName="username">
+            <div class="validation-error" *ngIf="SignupForm.controls['username'].hasError('required') && SignupForm.controls['username'].touched">Enter Username</div>
+        </div>
+        <div class="form-group">
+            <label for="signup__form-label">Password:</label>
+            <input type="text" id="signup-password" name="signup-password" required formControlName="password">
+            <div class="validation-error" *ngIf="SignupForm.controls['password'].hasError('required') && SignupForm.controls['password'].touched">Enter Password</div>
+        </div>
+        <div class="form-group">
+            <label class="signup__form-label">Confirm Password:</label>
+            <input type="password" id="signup-confirmPassword" name="signup-confirmPassword" required
+                formControlName="confirmPassword" />
+                <div class="validation-error" *ngIf="SignupForm.controls['confirmPassword'].hasError('required') && SignupForm.controls['confirmPassword'].touched">Enter Confirm Password</div>
+                <div class="validation-error" *ngIf="SignupForm.hasError('passwordMismatch')">Password Mismatch</div>
+        </div>
+        <div class="signup__form__buttons">
+            <button class="signup__buttons-submit" type="submit">Sign Up</button>
+            <button class="signup__buttons-reset" (click)="onReset()">Reset</button>
+        </div>
+    </form>
+    </div>
+    <div>
+>>>>>>> Stashed changes
