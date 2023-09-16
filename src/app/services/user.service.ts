@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { IUserDetails } from 'app/pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.interface';
+import { FormGroup } from '@angular/forms';
 
 @Injectable()
 export class UserService {
@@ -17,8 +18,10 @@ export class UserService {
     return this.localstorageContext.getStorage('user');
   }
 
-  public ValidateUser(currUser: Partial<IUserDetails>): boolean{
+  public ValidateUser(currUser: FormGroup): boolean{
     var user = this.localstorageContext.getStorage('user');
-    return currUser.username === user.username && currUser.password === user.password
+    console.log(user);
+    console.log(currUser.value);
+    return currUser.value.username === user.username && currUser.value.password === user.password
   }
 }

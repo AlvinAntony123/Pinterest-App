@@ -17,7 +17,7 @@
                 <div class="validation-error" *ngIf="SigninForm.controls['password'].hasError('required') && SigninForm.controls['password'].touched">Enter Password</div>
             </div>
             <button type="submit">Sign In</button>
-            <button type="submit">Sign Up</button>
+            <button (click)="SignUp()">Sign Up</button>
         </div>
     </form>
     </div>

@@ -30,7 +30,10 @@ export class PinterestTopBarSigninComponent implements OnInit {
   }
 
   public SignIn(){
-    console.log('signin')
+    console.log('hii');
+    if(this.userContext.ValidateUser(this.SigninForm))
+      this.router.navigate(['home']);
+    else this.error = true;
   }
 
   public SignUp(){
