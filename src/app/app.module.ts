@@ -7,12 +7,12 @@ import { PinterestContainerModule } from './pinterest-container/pinterest-contai
 import { PinterestTopBarComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar.component';
 import { PinterestTopBarSigninComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signin/pinterest-top-bar-signin.component';
 import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
-import { RouterModule } from '@angular/router';
-import { LocalStorageService } from './services/local-storage.service';
-import { AddTileService } from './services/add-tile.service';
-import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PinterestContainerComponent } from './pinterest-container/pinterest-container.component';
+import { AddTileService } from './services/add-tile.service';
+import { LocalStorageService } from './services/local-storage.service';
+import { UserService } from './services/user.service';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +21,10 @@ import { PinterestContainerComponent } from './pinterest-container/pinterest-con
     BrowserModule,
     AppRoutingModule,
     PinterestContainerModule,
+    
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     LocalStorageService,

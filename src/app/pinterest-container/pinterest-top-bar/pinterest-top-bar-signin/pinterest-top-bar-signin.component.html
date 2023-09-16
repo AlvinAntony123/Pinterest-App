@@ -4,17 +4,21 @@
     <h3 class="signin-h3">Welcome to Pinterest</h3>
     <p class="signin-p" *ngIf="error === true">Invalid Credentials</p>
     <div class="signin__form">
+        <form [formGroup]="SigninForm" (ngSubmit)="SignIn()">
         <div> 
             <div class="form-group">
                 <label for="signin__form-label" for="signin-username">Username:</label>
-                <input type="text" id="signin-username" name="signin-username" required [(ngModel)]="user.username">
+                <input type="text" id="signin-username" name="signin-username" required formControlName="username">
+                <div class="validation-error" *ngIf="SigninForm.controls['username'].hasError('required') && SigninForm.controls['username'].touched">Enter Username</div>
             </div>
             <div class="form-group">
                 <label for="signin__form-label">Password:</label>
-                <input type="password" id="signin-password" name="signin-password" required [(ngModel)]="user.password">
+                <input type="password" id="signin-password" name="signin-password" required formControlName="password">
+                <div class="validation-error" *ngIf="SigninForm.controls['password'].hasError('required') && SigninForm.controls['password'].touched">Enter Password</div>
             </div>
-            <button type="submit" (click)="SignIn()">Sign In</button>
-            <button type="submit" (click)="SignUp()">Sign Up</button>
+            <button type="submit">Sign In</button>
+            <button type="submit">Sign Up</button>
         </div>
+    </form>
     </div>
 </div>

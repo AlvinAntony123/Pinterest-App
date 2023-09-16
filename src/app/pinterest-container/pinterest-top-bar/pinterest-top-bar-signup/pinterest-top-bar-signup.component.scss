@@ -34,7 +34,8 @@
   
         input[type="email"],
         input[type="text"],
-        input[type="password"] {
+        input[type="password"]
+         {
           width: 100%;
           padding: 10px;
           font-size: 16px;
@@ -66,5 +67,9 @@
         }
       }
     }
+  }
+
+  .validation-error{
+    color: red;
   }
   

@@ -3,6 +3,7 @@ import { ITile } from 'app/pinterest-container/pinterest-container.interface';
 import { IUserDetails } from '../pinterest-top-bar-signup/pinterest-top-bar-signup.interface';
 import { UserService } from 'app/services/user.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pinterest-top-bar-signin',
@@ -10,30 +11,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./pinterest-top-bar-signin.component.scss']
 })
 export class PinterestTopBarSigninComponent implements OnInit {
-  
+  SigninForm!: FormGroup;
+
   public user!: Partial<IUserDetails>;
   public error: boolean = false
 
   constructor(
     private readonly userContext: UserService,
-    private readonly router: Router
+    private readonly router: Router,
+    private formBuilder: FormBuilder
   ){}
 
   public ngOnInit(): void {
-    this.user = {
-      username: '',
-      password: ''
-    }
+    this.SigninForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
   }
 
   public SignIn(){
-    console.log(this.userContext.ValidateUser(this.user));
-    if(this.userContext.ValidateUser(this.user))
-    {
-      this.router.navigate(['home']);
-    }
-    else 
-      this.error = true;
+    console.log('signin')
   }
 
   public SignUp(){
