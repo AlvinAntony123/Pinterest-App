@@ -5,6 +5,7 @@ import { PinterestTopBarSigninComponent } from './pinterest-container/pinterest-
 import { PinterestTopBarSignupComponent } from './pinterest-container/pinterest-top-bar/pinterest-top-bar-signup/pinterest-top-bar-signup.component';
 import { CreateTileComponent } from './pinterest-container/create-tile/create-tile.component';
 import { FavoritesComponent } from './pinterest-container/favorites/favorites.component';
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: PinterestContainerComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'login',
@@ -26,16 +28,19 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateTileComponent
+    component: CreateTileComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'favorite',
-    component: FavoritesComponent
+    component: FavoritesComponent,
+    canActivate: [authGuard]
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [authGuard],
 })
 export class AppRoutingModule { }

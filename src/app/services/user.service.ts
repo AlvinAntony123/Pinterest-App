@@ -24,4 +24,8 @@ export class UserService {
     console.log(currUser.value);
     return currUser.value.username === user.username && currUser.value.password === user.password
   }
+
+  public IsLoggedIn() : boolean{
+    return !!this.localstorageContext.getStorage('user');
+  }
 }
