@@ -13,6 +13,8 @@ import { LocalStorageService } from './services/local-storage.service';
 import { UserService } from './services/user.service';
 import { RouterModule } from '@angular/router';
 import { PinterestContainerRoutingModule } from './pinterest-container/pinterest-container-routing.module';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpsInterceptor } from './https.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,18 @@ import { PinterestContainerRoutingModule } from './pinterest-container/pinterest
     BrowserModule,
     AppRoutingModule,
     PinterestContainerModule,
-    
+    HttpClientModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
     PinterestContainerRoutingModule,
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpsInterceptor,
+      multi: true,
+    },
     LocalStorageService,
     AddTileService,
     UserService
