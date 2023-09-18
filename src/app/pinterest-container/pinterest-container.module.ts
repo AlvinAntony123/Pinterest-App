@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateTileComponent } from './create-tile/create-tile.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { PinterestContainerRoutingModule } from './pinterest-container-routing.module';
 
 
 
@@ -24,7 +25,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PinterestContainerRoutingModule
   ],
   exports: [
     PinterestContainerComponent
