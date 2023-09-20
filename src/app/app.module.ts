@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { PinterestContainerRoutingModule } from './pinterest-container/pinterest-container-routing.module';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpsInterceptor } from './https.interceptor';
+import { LoginService } from './services/login.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { HttpsInterceptor } from './https.interceptor';
     },
     LocalStorageService,
     AddTileService,
-    UserService
+    UserService,
+    LoginService,
+    JwtHelperService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
   ],
   bootstrap: [AppComponent]
 })

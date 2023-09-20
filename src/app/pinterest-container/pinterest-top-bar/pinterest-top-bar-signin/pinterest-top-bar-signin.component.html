@@ -3,6 +3,7 @@
     <h2 class="signin-h2">SIGN-IN</h2>
     <h3 class="signin-h3">Welcome to Pinterest</h3>
     <p class="signin-p" *ngIf="error === true">Invalid Credentials</p>
+    <p class="signin-p" *ngIf="inValid === true">Invalid User!!</p>
     <div class="signin__form">
         <form [formGroup]="SigninForm" (ngSubmit)="SignIn()">
         <div> 

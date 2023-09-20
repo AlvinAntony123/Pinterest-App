@@ -4,6 +4,8 @@ import { IUserDetails } from '../pinterest-top-bar-signup/pinterest-top-bar-sign
 import { UserService } from 'app/services/user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from 'app/services/login.service';
+import { LocalStorageService } from 'app/services/local-storage.service';
 
 @Component({
   selector: 'app-pinterest-top-bar-signin',
@@ -15,11 +17,15 @@ export class PinterestTopBarSigninComponent implements OnInit {
 
   public user!: Partial<IUserDetails>;
   public error: boolean = false
+  public inValid: boolean = false;
+  public errorMessage!: string;
 
   constructor(
     private readonly userContext: UserService,
     private readonly router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private loginService: LoginService,
+    private storageService: LocalStorageService
   ){}
 
   public ngOnInit(): void {
@@ -30,10 +36,15 @@ export class PinterestTopBarSigninComponent implements OnInit {
   }
 
   public SignIn(){
-    console.log('hii');
-    if(this.userContext.ValidateUser(this.SigninForm))
+    this.loginService.authenticateUser(JSON.stringify(this.SigninForm.value)).subscribe(response => {
+      console.log(response);
+      this.storageService.setStorage('jwt', response);
       this.router.navigate(['home']);
-    else this.error = true;
+    },
+    error => {
+      this.inValid = true;
+      this.errorMessage = error;
+    })
   }
 
   public SignUp(){
