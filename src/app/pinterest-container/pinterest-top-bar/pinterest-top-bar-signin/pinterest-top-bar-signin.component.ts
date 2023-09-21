@@ -32,7 +32,7 @@ export class PinterestTopBarSigninComponent implements OnInit {
     this.SigninForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   public SignIn(){
